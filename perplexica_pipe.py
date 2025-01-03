@@ -33,7 +33,7 @@ class Pipe:
 
     def __init__(self):
         self.type = "manifold"  # Pipe type
-        self.id = "engine_search"  # Pipe ID
+        self.id = "perplexica_pipe"  # Pipe ID
         self.name = "Perplexica/"  # Pipe name
         self.valves = self.Valves()  # Initialize Valves instance
         self.history = []  # Initialize history list for storing conversation history
