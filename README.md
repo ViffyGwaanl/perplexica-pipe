@@ -3,4 +3,5 @@ You can refer to the API documentation of perplexica and then configure it on th
 This is the API documentation for perplexica：
 https://github.com/ItzCrazyKns/Perplexica/blob/master/docs/API/SEARCH.md
 
-You can configure settings in openwebui：
+You can directly install my code on the openwebui official website:
+https://openwebui.com/f/gwaanl/perplexica_pipe
