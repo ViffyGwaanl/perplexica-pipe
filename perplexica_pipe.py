@@ -2,7 +2,7 @@
 title: perplexica pipe
 author: open-webui, gwaanl
 author_url：https://github.com/ViffyGwaanl/perplexica-pipe
-您可以在上面的链接中提交问题
+You can submit questions in the link above
 funding_url: https://github.com/open-webui
 version: 0.2.1
 required_open_webui_version: 0.5.3
