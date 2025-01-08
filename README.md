@@ -7,6 +7,7 @@ You can directly install my code on the openwebui official website:
 
 https://openwebui.com/f/gwaanl/perplexica_pipe
 
+
 ![image](https://github.com/user-attachments/assets/33345bfe-601c-4153-9bba-570c626f2412)
 
 You need to configure perplexica first, using the port of perplexica-backend
