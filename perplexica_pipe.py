@@ -12,6 +12,7 @@ required_open_webui_version: 0.5.3
 and send the history to the Perplexica API for more accurate searches each time a search is performed.
 0.2.2：Change the model display name to the following format "Perplexica/gpt-4o/academicSearch"
 0.3.1：Added the option to select a local model, which can be configured to use OpenAI or Ollama in perplexica_provider
+0.3.2：Configure the provider for embeddingModel and chatModel separately
 """
 
 
@@ -25,8 +26,9 @@ class Pipe:
         # Perplexica API configuration
         enable_perplexica: bool = Field(default=True)  # Enable Perplexica search (default: True)
         perplexica_api_url: str = Field(default="http://localhost:3001/api/search")  # Perplexica API URL
-        perplexica_provider: str = Field(default="openai")  # Provider for chat and embedding models (default: openai)
+        perplexica_chat_provider: str = Field(default="openai")  # Provider for chat model
         perplexica_chat_model: str = Field(default="gpt-4o-mini")  # Chat model to use (default: gpt-4o-mini)
+        perplexica_embedding_provider: str = Field(default="openai")  # Provider for embedding model
         perplexica_embedding_model: str = Field(default="text-embedding-3-large")  # Embedding model to use (default: text-embedding-3-large)
         perplexica_focus_mode: str = Field(default="webSearch")  # Focus mode for search (default: webSearch)
         perplexica_optimization_mode: str = Field(
@@ -96,11 +98,11 @@ class Pipe:
             # Build request body
             request_body = {
                 "chatModel": {
-                    "provider": self.valves.perplexica_provider,
+                    "provider": self.valves.perplexica_chat_provider,
                     "model": self.valves.perplexica_chat_model,
                 },
                 "embeddingModel": {
-                    "provider": self.valves.perplexica_provider,
+                    "provider": self.valves.perplexica_embedding_provider,
                     "model": self.valves.perplexica_embedding_model,
                 },
                 "optimizationMode": self.valves.perplexica_optimization_mode,  # Use the configured optimization mode
