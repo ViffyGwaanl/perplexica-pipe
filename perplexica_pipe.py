@@ -10,7 +10,7 @@ required_open_webui_version: 0.5.3
 0.1.1：Create code to implement the "pipeline" function using the Perplexica search API
 0.2.1：Increased contextual memory function, which can record historical conversation data 
 and send the history to the Perplexica API for more accurate searches each time a search is performed.
-
+0.2.2：Change the model display name to the following format "Perplexica/gpt-4o/academicSearch"
 """
 
 
@@ -43,7 +43,7 @@ class Pipe:
         enabled_pipes = []
         if self.valves.enable_perplexica:
             enabled_pipes.append(
-                {"id": "perplexica", "name": self.valves.perplexica_focus_mode}
+                {"id": "perplexica", "name": f"{self.valves.perplexica_chat_model}/{self.valves.perplexica_focus_mode}"}
             )
         return enabled_pipes
 
