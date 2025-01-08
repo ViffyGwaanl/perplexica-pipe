@@ -15,7 +15,8 @@ Find the installed perplexica pipe in the function settings of the admin setting
 
 ![image](https://github.com/user-attachments/assets/ef4f8458-fbd8-49db-b98e-b827ceef34d9)
 
-![image](https://github.com/user-attachments/assets/49f412f4-4b64-4321-8059-a09b7132896d)
+![image](https://github.com/user-attachments/assets/d50dda3c-8aec-407a-be80-f5c19696234e)
+
 
 Then it will be displayed as a model in the model, showing what the current search mode is. You can copy the configuration for multiple perplexica pipes and choose different searches
 
