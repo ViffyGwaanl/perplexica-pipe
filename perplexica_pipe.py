@@ -14,7 +14,8 @@ and send the history to the Perplexica API for more accurate searches each time 
 0.3.1：Added the option to select a local model, which can be configured to use OpenAI or Ollama in perplexica_provider
 0.3.2：Configure the provider for embeddingModel and chatModel separately
 0.3.3: Added customOpenAIKey and customOpenAIBaseURL for custom OpenAI instances
-0.3.4: Fixed the issue that caused openwebui to fail to start when the values of customOpenAIBaseURL and customOpenAIKey were none
+0.3.4: Fixed the issue that caused openwebui to fail to start when the values of customOpenAIBaseURL and customOpenAIKey were none,
+If you installed 0.3.3 and it caused openwebui to fail to start, please find the solution at author_url.
 """
 
 from typing import List, Union
