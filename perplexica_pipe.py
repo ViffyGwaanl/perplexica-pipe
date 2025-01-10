@@ -4,7 +4,7 @@ author: open-webui, gwaanl
 author_url：https://github.com/ViffyGwaanl/perplexica-pipe
 You can find the instructions and submit questions at the website above
 funding_url: https://github.com/ViffyGwaanl
-version: 0.3.4
+version: 0.3.5
 required_open_webui_version: 0.5.3
 
 0.1.1：Create code to implement the "pipeline" function using the Perplexica search API
@@ -16,6 +16,7 @@ and send the history to the Perplexica API for more accurate searches each time 
 0.3.3: Added customOpenAIKey and customOpenAIBaseURL for custom OpenAI instances
 0.3.4: Fixed the issue that caused openwebui to fail to start when the values of customOpenAIBaseURL and customOpenAIKey were none,
 If you installed 0.3.3 and it caused openwebui to fail to start, please find the solution at author_url.
+0.3.5: Optimized the default values and the cleared content of the request body
 """
 
 from typing import List, Union
@@ -52,10 +53,10 @@ class Pipe:
         )  # Optimization mode for search (default: balanced)
         # Custom OpenAI configuration
         customOpenAIBaseURL: str = Field(
-            default="https://api.xxxx.com/v1"
+            default="default"
         )  # Base URL for custom OpenAI instance
         customOpenAIKey: str = Field(
-            default="sk-xxxxxxx"
+            default="default"
         )  # API key for custom OpenAI instance
 
     def __init__(self):
@@ -150,7 +151,7 @@ class Pipe:
 
             # Remove None values from request_body
             request_body = {k: v for k, v in request_body.items() if v is not None}
-
+            request_body = {k: v for k, v in request_body.items() if v != "default"}
             headers = {"Content-Type": "application/json"}  # Set request headers
 
             response = requests.post(
